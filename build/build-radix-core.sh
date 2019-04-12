@@ -9,7 +9,7 @@ apt install -y apt-transport-https build-essential curl gdebi-core libglibmm-2.4
 wget -c https://launchpad.net/~kxstudio-debian/+archive/kxstudio/+files/kxstudio-repos_9.5.1~kxstudio3_all.deb
 wget -c https://launchpad.net/~kxstudio-debian/+archive/kxstudio/+files/kxstudio-repos-gcc5_9.5.1~kxstudio3_all.deb
 gdebi -n kxstudio-repos_9.5.1~kxstudio3_all.deb
-gdebi -n kxstudio-repos-gcc5_9.5.1~kxstudio3_all.deb
+gdebi -n kxstudio-repos-gcc5_9.5.1~kxstudio3_all.deb;apt update
 
 # Remoção de pacotes desnecessários
 apt autoremove --purge -y\
