@@ -2,4 +2,3 @@ steps:
   - label: ':carrot: Gerando a ISO do RaDiX'
     commands: 
       - bash build/build-iso.sh
-      - #sudo rm -rfv livecdtmp
