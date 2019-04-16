@@ -43,6 +43,7 @@ apt autoremove --purge -y\
  yelp*
 
 # Instalação do repositório e das customizações do RaDiX
+add-apt-repository universe;add-apt-repository multiverse;apt update
 apt install -y rauldipeas-repo
 apt install -y --no-install-recommends ubuntu-software
 # Remoção de pacotes desnecessários
