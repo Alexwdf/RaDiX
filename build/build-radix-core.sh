@@ -2,7 +2,7 @@
 # Raul Dipeas Repo
 echo 'deb https://radix.ws/core-repo cosmic main' > /etc/apt/sources.list.d/rauldipeas.list
 echo 'deb https://master.dl.sourceforge.net/project/radix-core/large-repo cosmic main' >> /etc/apt/sources.list.d/rauldipeas.list
-curl https://radix.ws/core-repo/rauldipeas.key | gpg --dearmor > /etc/apt/trusted.gpg.d/rauldipeas.gpg
+curl -L https://radix.ws/core-repo/rauldipeas.key | gpg --dearmor > /etc/apt/trusted.gpg.d/rauldipeas.gpg
 add-apt-repository universe;add-apt-repository multiverse;apt update
 apt install -y apt-transport-https build-essential curl gdebi-core libglibmm-2.4-1v5 ruby-dev software-properties-common
 # KXStudio Repos
@@ -42,8 +42,43 @@ apt autoremove --purge -y\
  xubuntu*\
  yelp*
 
+# Compiz Reloaded
+curl -s http://download.opensuse.org/repositories/home:/stevenpusser:/compiz-reloaded-rebuilds/Debian_Testing/Release.key | gpg --dearmor > /etc/apt/trusted.gpg.d/compiz-reloaded.gpg 2> /dev/null
+echo 'deb http://download.opensuse.org/repositories/home:/stevenpusser:/compiz-reloaded-rebuilds/xUbuntu_17.10/ /' > /etc/apt/sources.list.d/compiz-reloaded.list
+echo '
+Package: emerald
+Pin: origin download.opensuse.org
+Pin-Priority: 600
+
+Package: fusion-icon
+Pin: origin download.opensuse.org
+Pin-Priority: 600' > /etc/apt/preferences.d/compiz-reloaded-pin-600
+
+# Sublime Text
+curl -s https://download.sublimetext.com/sublimehq-pub.gpg | gpg --dearmor > /etc/apt/trusted.gpg.d/sublime-text.gpg 2> /dev/null
+echo 'deb https://download.sublimetext.com/ apt/stable/' > /etc/apt/sources.list.d/sublime-text.list
+
+# Materia
+rm -rf /etc/apt/sources.list.d/dyatlov-igor-ubuntu-materia-theme*
+add-apt-repository -y -n ppa:dyatlov-igor/materia-theme
+sed -i 's/disco/cosmic/g' /etc/apt/sources.list.d/*materia*
+
+# Y PPA Manager
+rm -rf /etc/apt/sources.list.d/webupd8team-ubuntu-y-ppa-manager*
+add-apt-repository -y -n ppa:webupd8team/y-ppa-manager
+
+# Papirus (Dev)
+rm -rf /etc/apt/sources.list.d/papirus-ubuntu-papirus*
+add-apt-repository -y -n ppa:papirus/papirus-dev
+add-apt-repository -y -n ppa:papirus/papirus
+sudo sed -i 's/disco/cosmic/g' /etc/apt/sources.list.d/*papirus*
+
+# Hardcode-Tray
+rm -rf /etc/apt/sources.list.d/andreas-angerer89-ubuntu-sni-qt-patched*
+add-apt-repository -y -n ppa:andreas-angerer89/sni-qt-patched
+sudo sed -i 's/disco/cosmic/g' /etc/apt/sources.list.d/*sni-qt*
+
 # Instalação do repositório e das customizações do RaDiX
-add-apt-repository universe;add-apt-repository multiverse;apt update
 apt install -y rauldipeas-repo
 apt install -y --no-install-recommends ubuntu-software
 # Remoção de pacotes desnecessários
