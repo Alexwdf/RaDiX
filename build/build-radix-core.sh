@@ -53,26 +53,21 @@ Pin-Priority: 600
 Package: fusion-icon
 Pin: origin download.opensuse.org
 Pin-Priority: 600' > /etc/apt/preferences.d/compiz-reloaded-pin-600
-
 # Sublime Text
 curl -s https://download.sublimetext.com/sublimehq-pub.gpg | gpg --dearmor > /etc/apt/trusted.gpg.d/sublime-text.gpg 2> /dev/null
 echo 'deb https://download.sublimetext.com/ apt/stable/' > /etc/apt/sources.list.d/sublime-text.list
-
 # Materia
 rm -rf /etc/apt/sources.list.d/dyatlov-igor-ubuntu-materia-theme*
 add-apt-repository -y -n ppa:dyatlov-igor/materia-theme
 sed -i 's/disco/cosmic/g' /etc/apt/sources.list.d/*materia*
-
 # Y PPA Manager
 rm -rf /etc/apt/sources.list.d/webupd8team-ubuntu-y-ppa-manager*
 add-apt-repository -y -n ppa:webupd8team/y-ppa-manager
-
 # Papirus (Dev)
 rm -rf /etc/apt/sources.list.d/papirus-ubuntu-papirus*
 add-apt-repository -y -n ppa:papirus/papirus-dev
 add-apt-repository -y -n ppa:papirus/papirus
 sudo sed -i 's/disco/cosmic/g' /etc/apt/sources.list.d/*papirus*
-
 # Hardcode-Tray
 rm -rf /etc/apt/sources.list.d/andreas-angerer89-ubuntu-sni-qt-patched*
 add-apt-repository -y -n ppa:andreas-angerer89/sni-qt-patched
