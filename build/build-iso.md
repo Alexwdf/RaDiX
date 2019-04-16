@@ -33,6 +33,7 @@ sudo chroot edit chsh -s /usr/bin/fish root
 sudo chroot edit wget -O oh-my-fish.sh https://get.oh-my.fish
 sudo chroot edit su -c "fish oh-my-fish.sh --noninteractive"
 sudo chroot edit su -c "fish -c 'omf install bobthefish'"
+sudo chroot edit rm -rf oh-my-fish.sh
 sudo chroot edit update-initramfs -u -k all
 sudo chroot edit sed -i -e 's@user-uid [0-9]*@user-uid 990@' /usr/share/initramfs-tools/scripts/casper-bottom/25adduser
 ```
