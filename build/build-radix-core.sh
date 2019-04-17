@@ -73,6 +73,8 @@ rm -rf /etc/apt/sources.list.d/andreas-angerer89-ubuntu-sni-qt-patched*
 add-apt-repository -y -n ppa:andreas-angerer89/sni-qt-patched
 sudo sed -i 's/disco/cosmic/g' /etc/apt/sources.list.d/*sni-qt*
 
+apt update
+
 # Instalação do repositório e das customizações do RaDiX
 apt install -y rauldipeas-repo
 apt install -y --no-install-recommends ubuntu-software
