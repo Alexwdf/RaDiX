@@ -82,6 +82,7 @@ apt install -y rauldipeas-repo
 apt install -y --no-install-recommends ubuntu-software
 # Remoção de pacotes desnecessários
 apt autoremove --purge -y build-essential fonts-lato meterbridge ruby-dev yelp* libyelp* xfdashboard-plugins
+rm -rfv /usr/share/fonts/truetype/ancient-scripts /usr/share/fonts/truetype/lato
 dpkg -l | grep -E linux-image-.*-generic | cut -d ' ' -f3 | grep -v `dpkg -l | grep -E linux-image-.*-generic | cut -d ' ' -f3 | tail -1` | grep -v `uname -r` | xargs apt autoremove --purge -y
 # LightDM
 echo '[SeatDefaults]
